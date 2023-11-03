@@ -6,8 +6,8 @@
 
         <ul class="task-list">
             <div>
-                @foreach ($tasks as $task)
-                <livewire:task :task="$task->description">
+                @foreach ($tasks as $key => $task)
+                    @livewire('task', ['task' => $task->description], key($key))
                 @endforeach
             </div>
         </ul>

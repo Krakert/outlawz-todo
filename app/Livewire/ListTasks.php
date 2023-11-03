@@ -49,25 +49,7 @@ class ListTasks extends Component
         $this->task->save();
 
         $this->mount();
-
-        // $this->emit('taskCompleted');
     }
-
-    // public function editTask($id)
-    // {
-    //     $editingTask = Task::where('editing', '=', true)
-    //         ->first();
-
-    //     if(!$editingTask) {
-    //         $this->getTask($id);
-    //         $this->task->editing = true;
-    //         $this->task->save();
-
-    //         $this->mount();
-
-    //         $this->emit('editingTask');
-    //     }
-    // }
 
     public function render()
     {

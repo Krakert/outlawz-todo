@@ -21,6 +21,8 @@ class CreateTask extends Component
 
         $this->description = '';
 
+        $this->dispatch('taskAdded');
+
     }
 
     public function createTask(): void
@@ -32,10 +34,7 @@ class CreateTask extends Component
 
     public function render()
     {
-        return view('livewire.create-task');
-    }
-
-    private function emit(string $string)
-    {
+        return view('livewire.create-task')
+            ->layout('components/layouts.base');
     }
 }

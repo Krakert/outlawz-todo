@@ -7,6 +7,7 @@
         <title>{{ $title ?? 'Todo List' }}</title>
     </head>
     <body>
-        {{ $slot }}
+        @yield('content')
+        @livewireScripts
     </body>
 </html>

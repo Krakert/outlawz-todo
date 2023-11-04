@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Task;
 use Carbon\Carbon;
+use Livewire\Attributes\On; 
 
 class CompletedTasks extends Component
 {
@@ -16,6 +17,7 @@ class CompletedTasks extends Component
         $this->getTasks();
     }
 
+    #[On('task-completed')]
     public function getTasks()
     {
         $tasks = Task::where('completed_at', '!=', null)

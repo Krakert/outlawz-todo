@@ -57,9 +57,6 @@ class EditTask extends Component
         $this->task->save();
     }
 
-
-
-
     public function render()
     {
         return view('livewire.edit-task');

@@ -40,6 +40,17 @@ class CompletedTasks extends Component
         $this->mount();
     }
 
+    public function returnTask($id)
+    {
+        $this->getTask($id);
+        $this->task->completed_at = null;
+        $this->task->save();
+
+        $this->mount();
+
+        $this->dispatch('task-returned');
+    }
+
     public function getTask($id)
     {
         $this->task = Task::find($id);

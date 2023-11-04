@@ -29,6 +29,12 @@ class ListTasks extends Component
         $this->getTasks();
     }
 
+    #[On('task-returned')]
+    public function taskReturned()
+    {
+        $this->getTasks();
+    }
+
     public function getTasks()
     {
         $this->tasks = Task::where('completed_at', null)

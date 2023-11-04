@@ -14,7 +14,8 @@
                             <div x-show="open">
                                 <div class="flex flex-row">
                                     <div class="bg-red-500 rounded-lg p-2 mx-2">
-                                        <x-heroicon-o-arrow-uturn-down class="w-6 h-6 text-white" @click="toggle()" />
+                                        <x-heroicon-o-arrow-uturn-down class="w-6 h-6 text-white"
+                                        wire:click="returnTask({{ $task->id }})"  @click="toggle()" />
                                     </div>
                                     <div class="bg-red-500 rounded-lg p-2 mx-2">
                                         <x-heroicon-o-trash class="w-6 h-6 text-white"

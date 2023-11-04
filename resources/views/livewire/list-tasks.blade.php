@@ -7,7 +7,7 @@
                     <div x-data="{ open: false, toggle() { this.open = !this.open } }">
                         <div class="bg-blue-300 rounded-lg p-2 m-2" @click="toggle()">
                             <li>
-                                <span class="task-number">{{ $key }}</span> -
+                                <span class="task-number">{{ ++$key }}</span> -
                                 {{ $task->description }}
                             </li>
                             <div x-show="open">

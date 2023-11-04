@@ -7,7 +7,7 @@
         @livewireStyles
         <title>{{ $title ?? 'Todo List' }}</title>
     </head>
-    <body>
+    <body class="bg-blue-950 place-items-center">
         @yield('content')
         @livewireScripts
     </body>

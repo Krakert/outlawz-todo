@@ -9,6 +9,7 @@
                             <li>
                                 <span class="task-number">{{ $key }}</span> -
                                 {{ $task->description }}
+                                <span class="task-completed-date">(Finished at: {{ $task->completed_at }})</span>
                             </li>
                             <div x-show="open">
                                 <div class="flex flex-row">

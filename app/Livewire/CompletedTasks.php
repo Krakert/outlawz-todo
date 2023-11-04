@@ -32,6 +32,19 @@ class CompletedTasks extends Component
         $this->tasks = $tasks;
     }
 
+    public function deleteTask($id)
+    {
+        $this->getTask($id);
+        $this->task->delete();
+
+        $this->mount();
+    }
+
+    public function getTask($id)
+    {
+        $this->task = Task::find($id);
+    }
+
     public function render()
     {
         return view('livewire.completed-tasks');

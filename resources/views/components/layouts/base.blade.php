@@ -9,6 +9,7 @@
                 {{ $slot }}  
                 @livewire('list-tasks') 
                 @livewire('edit-task')
+                @livewire('completed-tasks')
             </div>
         </div>
     </div>

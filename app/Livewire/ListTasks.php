@@ -59,6 +59,9 @@ class ListTasks extends Component
         $this->task->save();
 
         $this->mount();
+
+        $this->dispatch('task-completed');
+
     }
 
     public function deleteTask($id)

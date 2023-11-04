@@ -8,6 +8,7 @@
             <div>
                 {{ $slot }}  
                 @livewire('list-tasks') 
+                @livewire('edit-task')
             </div>
         </div>
     </div>

@@ -4,19 +4,13 @@ namespace App\Livewire;
 
 use App\Models\Task;
 use Livewire\Component;
-use Illuminate\Support\Facades\DB;
+use Livewire\Attributes\On; 
 
 class ListTasks extends Component
 {
 
     public $tasks;
     public $task;
-
-    protected $listeners = [
-        'taskAdded',
-        'taskEdited',
-        'taskReturned'
-    ];
 
     public function mount()
     {
@@ -33,11 +27,28 @@ class ListTasks extends Component
         $this->getTasks();
     }
 
+    #[On('task-added')]
     public function getTasks()
     {
         $this->tasks = Task::where('completed_at', null)
         ->where('editing', '!=', true)
         ->get();
+    }
+
+    public function editTask($id)
+    {
+        $editingTask = Task::where('editing', '=', true)
+            ->first();
+
+        if(!$editingTask) {
+            $this->getTask($id);
+            $this->task->editing = true;
+            $this->task->save();
+
+            $this->mount();
+
+            $this->dispatch('editing-task');
+        }
     }
 
     public function taskCompleted($id)

@@ -21,7 +21,7 @@ class CreateTask extends Component
 
         $this->description = '';
 
-        $this->dispatch('taskAdded');
+        $this->dispatch('task-added');
 
     }
 

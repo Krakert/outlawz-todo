@@ -1,6 +1,6 @@
 <div class="card task-card">
     <div class="card-body">
-        <h1>Create Task</h1>
+        <p class="text-2xl">Create Task</p>
 
         @error('description') <span class="error">- {{ $message }}</span> @enderror
 

@@ -2,9 +2,8 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
 use App\Models\Task;
-use App\Http\Controllers\Controller;
+use Livewire\Component;
 use Illuminate\Support\Facades\DB;
 
 class ListTasks extends Component
@@ -36,10 +35,9 @@ class ListTasks extends Component
 
     public function getTasks()
     {
-        $this->tasks = DB::table('tasks')
-            ->where('completed_at', null)
-            ->where('editing', '!=', true)
-            ->get();
+        $this->tasks = Task::where('completed_at', null)
+        ->where('editing', '!=', true)
+        ->get();
     }
 
     public function taskCompleted($id)
@@ -49,6 +47,19 @@ class ListTasks extends Component
         $this->task->save();
 
         $this->mount();
+    }
+
+    public function deleteTask($id)
+    {
+        $this->getTask($id);
+        $this->task->delete();
+
+        $this->mount();
+    }
+
+    public function getTask($id)
+    {
+        $this->task = Task::find($id);
     }
 
     public function render()

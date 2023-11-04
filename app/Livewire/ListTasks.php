@@ -17,17 +17,18 @@ class ListTasks extends Component
         $this->getTasks();
     }
 
+    #[On('task-added')]
     public function taskAdded()
     {
         $this->getTasks();
     }
 
+    #[On('task-edited')]
     public function taskEdited()
     {
         $this->getTasks();
     }
 
-    #[On('task-added')]
     public function getTasks()
     {
         $this->tasks = Task::where('completed_at', null)

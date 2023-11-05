@@ -4,7 +4,7 @@ Task can be make, edit, deleted, and marked complete
 
 # Start up
 
-Create a Sqlite DB file named `database.sqlite`in : `database/`
+Create a Sqlite DB file named `database.sqlite` in : `database/`
 
 Run migrations and start the server:
 

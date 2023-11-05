@@ -1,4 +1,6 @@
 # Livewire TODO
+A small To Do task app.
+Task can be make, edit, deleted, and marked complete
 
 # Start up
 
